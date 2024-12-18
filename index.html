@@ -1,41 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property Listing - Promenade 1</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Force HTTPS -->
+    <title>Promenade 1</title>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Property Listing</h1>
-        </header>
+    <div class="hero">
+        <div class="image-wrapper">
+            <img src="property-image.jpg" alt="Historisches Berghaus" class="main-image">
+            <div class="overlay"></div>
+        </div>
         
-        <main>
-            <div class="property-image">
-                <!-- Replace 'property-image.jpg' with your actual image filename -->
-                <img src="property-image.jpg" alt="Property Image" id="propertyImage">
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h1>PROMENADE 1</h1>
+                <p class="caption">BERGHAUS MIT GESCHICHTE</p>
             </div>
             
-            <div class="property-details">
-                <h2>Property Information</h2>
-                <p>Welcome to this exclusive property listing.</p>
-                <!-- Add your property description here -->
-                
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p>For more details, please visit:</p>
-                    <a href="https://www.promenade1.ch" class="cta-button">Visit Main Website</a>
-                </div>
-            </div>
-        </main>
-        
-        <footer>
-            <p>&copy; 2024 Property Listing. All rights reserved.</p>
-        </footer>
+            <a href="https://www.promenade1.ch" class="discover-button">
+                <span class="button-text">ENTDECKEN</span>
+                <span class="button-line"></span>
+            </a>
+        </div>
     </div>
 </body>
 </html>
