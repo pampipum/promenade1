@@ -4,19 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Promenade 1</title>
-    <!-- Updated CSP to be more permissive for styles and images -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:;">
-    
-    <!-- Inline critical CSS for immediate loading -->
-    <style>
-        /* Critical CSS for initial render */
-        body { opacity: 0; transition: opacity 0.5s ease; }
-        .loaded { opacity: 1; }
-    </style>
-    
-    <!-- Preload key assets -->
-    <link rel="preload" href="./styles.css" as="style">
-    <link rel="preload" href="./property-image.jpg" as="image">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +13,7 @@
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
+<body class="loaded">
     <div class="hero">
         <div class="image-wrapper">
             <img src="./property-image.jpg" alt="Historisches Berghaus" class="main-image">
@@ -45,10 +32,5 @@
             </a>
         </div>
     </div>
-
-    <!-- Simple script to add loaded class -->
-    <script>
-        document.body.classList.add('loaded');
-    </script>
 </body>
 </html>

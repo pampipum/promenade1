@@ -1,11 +1,4 @@
 /* Base styles */
-:root {
-    --color-background: #111213;
-    --color-text: #ffffff;
-    --color-overlay: rgba(0, 0, 0, 0.2);
-    --transition-speed: 0.4s;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -14,10 +7,16 @@
 
 body {
     font-family: 'DM Sans', sans-serif;
-    background: var(--color-background);
-    color: var(--color-text);
+    background: #0a0a0a;
+    color: #ffffff;
     height: 100vh;
     overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+body.loaded {
+    opacity: 1;
 }
 
 /* Layout */
@@ -33,15 +32,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-background);
 }
 
 .main-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scale(1.1);
-    animation: zoomOut 1.5s ease forwards;
 }
 
 .overlay {
@@ -50,7 +46,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-overlay);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 /* Content styling */
@@ -65,10 +61,7 @@ body {
 }
 
 .text-content {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 1s ease forwards;
-    animation-delay: 0.5s;
+    transform: translateY(0);
 }
 
 h1 {
@@ -89,11 +82,7 @@ h1 {
     display: inline-flex;
     flex-direction: column;
     text-decoration: none;
-    color: var(--color-text);
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp 1s ease forwards;
-    animation-delay: 0.8s;
+    color: #ffffff;
     align-self: flex-start;
 }
 
@@ -107,28 +96,20 @@ h1 {
 .button-line {
     width: 100%;
     height: 1px;
-    background: var(--color-text);
+    background: #ffffff;
     transform: scaleX(0.3);
     transform-origin: left;
-    transition: transform var(--transition-speed) ease;
+    transition: transform 0.4s ease;
 }
 
 .discover-button:hover .button-line {
     transform: scaleX(1);
 }
 
-/* Animations */
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes zoomOut {
-    to {
-        transform: scale(1);
-    }
+/* Selection styling */
+::selection {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
 }
 
 /* Responsive adjustments */
@@ -136,10 +117,4 @@ h1 {
     .content-wrapper {
         padding: 10vh 5vw;
     }
-}
-
-/* Selection styling */
-::selection {
-    background: rgba(255, 255, 255, 0.2);
-    color: var(--color-text);
 }
